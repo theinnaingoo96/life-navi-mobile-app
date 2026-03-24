@@ -57,6 +57,7 @@ export const useAppStore = create<AppState>()(
         {
             name: 'lifenavi-storage',
             storage: createJSONStorage(() => AsyncStorage),
+            partialize: (state) => ({
                 token: state.rememberMe ? state.token : null,
                 user: state.rememberMe ? state.user : null,
                 rememberMe: state.rememberMe,
